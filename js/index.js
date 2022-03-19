@@ -1,8 +1,13 @@
+let txt = document.getElementById('text');
 // Save the reference to text-field into a variable. | <input type="text">
+let btn = document.getElementById('btn');
 // Save the reference to new-item button into a variable. | <button>ADD ITEM</button> 
+let ul = document.getElementById('collected-items');
 // Save the reference to unordered or ordered list into a variable. | <ul></ul> or <ol></ol>
+let fee = document.getElementById('feedback');
 // Save the reference to paragraph for feedback | <p class="feedback"></p>
 
+function addItem() {
 // Start function addItem.
     // Create list-item and store output in a variable.
     // Check if user entered the value in input text-field.
@@ -19,3 +24,5 @@
     // End otherwise.
 // End function addItem.
 // Register your function addItem for click event on button.
+}
+
