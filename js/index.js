@@ -1,3 +1,4 @@
+let fm = document.querySelector('form');
 let txt = document.getElementById('text');
 // Save the reference to text-field into a variable. | <input type="text">
 let btn = document.getElementById('btn');
@@ -7,22 +8,29 @@ let ul = document.getElementById('collected-items');
 let fee = document.getElementById('feedback');
 // Save the reference to paragraph for feedback | <p class="feedback"></p>
 
-function addItem() {
-// Start function addItem.
-    // Create list-item and store output in a variable.
-    // Check if user entered the value in input text-field.
-    // If so:
-       // Use textContent property on created list-item
-       // and assign it with the value of the text written in the text-field
-       // Append list item to unordered list.
-       // Clear a feedback-message.
-       // Clear the text-field.
-       // Put the cursor back to (textField.focus())
-    // End if. 
-    // Otherwise:
-       // Print the message nothing entered in the paragraph "feedback"
-    // End otherwise.
-// End function addItem.
-// Register your function addItem for click event on button.
+function addItem(item) {
+   item.preventDefault();
+   let taskItems = [];
+   let container = {};
+
+   if (txt.value !== '') {
+      container.item = txt.value;
+      taskItems.push(txt.value);
+
+      for (let i of taskItems) {
+         // create a variable to keep the li tag
+         let li = document.createElement('li');
+         li.textContent = i;
+         ul.appendChild(li);
+      }
+      fm.reset();
+      // fm.textContent = '';
+
+   } else { 
+      //error 
+      console.log("oops");
+   }
+
 }
 
+fm.addEventListener('submit', addItem)
